@@ -1,0 +1,18 @@
+appVersion: apps/v1
+kind:  Deploymnet
+metadata:
+  name: turtle-deployment
+  namespace:  default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: turtle
+  template:
+    metadata:
+      labels:
+        app: turtle
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:stable
